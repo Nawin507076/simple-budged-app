@@ -7,11 +7,13 @@ import { RequirmentListComponent } from './requirment-list/requirment-list.compo
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MobileFormatPipe } from './mobile-format.pipe';
+import { RequirementFormComponent } from './requirement-form/requirement-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     RequirmentListComponent,
     MobileFormatPipe,
+    RequirementFormComponent,
 
   ],
   imports: [

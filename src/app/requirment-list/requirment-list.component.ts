@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { mobileFormat } from '../mobile-format';
 import { Requirement } from '../requirement';
 import { RequirementListService } from '../requirement-list.service';
@@ -15,7 +16,9 @@ export class RequirmentListComponent implements OnInit{
 
   isSmallTable = new FormControl(false);
 
-  constructor(private requirementService: RequirementListService) {
+  constructor(
+    private router: Router,
+    private requirementService: RequirementListService) {
     // this.requirements
     // = requirementService.getRequirement();
   }
@@ -24,6 +27,10 @@ export class RequirmentListComponent implements OnInit{
     this.requirementService.getRequirement()
     .subscribe(rs => this.requirements = rs)
    }
+
+  onAdd(): void {
+    this.router.navigate(['/requirment-form']);
+  }
 
   //  contactMobileNoFormat(mobileNo : string): string {
   //   return mobileFormat(mobileNo);
