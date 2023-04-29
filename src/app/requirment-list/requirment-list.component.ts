@@ -32,6 +32,17 @@ export class RequirmentListComponent implements OnInit{
     this.router.navigate(['/requirment-form']);
   }
 
+  onDelete(id: number): void {
+    console.log('delete id', id)
+    this.requirementService.deleteRequirement(id).subscribe(
+      () => this.requirements = this.requirements
+      .filter(v => v.id != id));
+  }
+
+  onEdit(id: number): void {
+    this.router.navigate(['/requirment-form', id])
+  }
+
   //  contactMobileNoFormat(mobileNo : string): string {
   //   return mobileFormat(mobileNo);
 
